@@ -17,7 +17,7 @@ const pianoSampler = new Tone.Sampler({
 		C4: "piano_C4.wav",
 		C5: "piano_C5.wav",
 	},
-	baseUrl: "./media/"
+	baseUrl: "/media/"
 }).toDestination();
 
 var toneOsc;
@@ -58,7 +58,7 @@ $('.key').click(function() {
 
 
 // Load notes array.
-$.getJSON('notes.json', function (data) {
+$.getJSON('/misc/notes.json', function (data) {
 	notesArray = data["440"];
 	for (let i = 0; i < notesArray.length; i++) {
 		notesDict[notesArray[i].note] = notesArray[i].frequency;
